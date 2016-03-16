@@ -1,0 +1,26 @@
+laser-exhaust-mon
+-----------------
+
+A device to monitor the pressures inside the laser exhaust filter
+box to determine when the filters need changing.
+
+This runs on a ESP8266-03 module. It communicates with two BMP180
+digital pressure/temperature sensors, and sends the data to our
+MQTT broker.
+
+Programming this device is done using the 6-pin FTDI header on the
+device. The USB jack is just for power.
+
+The sensors are connected to the controller with an RJ-45 connector
+(not ethernet!!). The pinout is:
+
+RJ45 PIN    COLOR       ESP PIN         FUNCTION
+--------    --------    --------        --------
+1           w/or                        GND
+2           or                          +3.3v
+3           w/bl                        GND
+4           bl                          +3.3v
+5           w/gn        0               SDA (sensor 1)
+6           gn          2               SCL (sensor 1)
+7           w/br        13              SDA (sensor 2)
+8           br          12              SCL (sensor 2)
